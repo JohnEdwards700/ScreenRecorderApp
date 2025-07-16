@@ -1,0 +1,69 @@
+﻿<Window x:Class="RecordingAppV2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RecordingAppV2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="100" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="333*"/>
+            <ColumnDefinition Width="167*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Recording..." FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="59,0,0,0"/>
+        <!-- Record Button -->
+        <Button x:Name="RecordButton" Width="80" Height="80" Background="#ed413e" BorderThickness="0"
+        ToolTip="Record" Click="RecordButton_Click" Grid.Column="1" Margin="77,2,10,2"
+        Content="Rec" Foreground="White" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Fill="{TemplateBinding Background}" Stroke="#ed413e" StrokeThickness="2"/>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button
+        x:Name="ScreenShotButton"
+        Background="gray"
+        BorderThickness="0"
+        Content="ScreenShot"
+        ToolTip="Take Screenshot"
+        Click="ScreenshotButton_Click" Margin="318,3,133,2">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Fill="gray" Stroke="gray" StrokeThickness="2"/>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button
+        x:Name="WebApiButton"
+        Background="GreenYellow"
+        BorderThickness="0"
+        Content="Web API"
+        Visibility="Visible"
+        ToolTip="Start Web App"
+        Click="StartWebApiButton_Click" Margin="485,2,233,2" Grid.ColumnSpan="2">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Fill="GreenYellow" Stroke="GreenYellow" StrokeThickness="2"/>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <TextBlock Text="Polling..." FontSize="24" Visibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="482,0,0,0" Grid.ColumnSpan="2"/>
+
+
+
+    </Grid>
+</Window>
